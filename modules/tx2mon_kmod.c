@@ -84,7 +84,7 @@ static int setup_tx2_node(struct tx2mon_data *tx2d, int node)
 	sysfs_bin_attr_init(&nd->bin_attr);
 	nd->bin_attr.attr.name = devm_kasprintf(&tx2d->pdev->dev, GFP_KERNEL,
 						"node%d_raw", node);
-	nd->bin_attr.attr.mode = 0600;
+	nd->bin_attr.attr.mode = 0644;
 	nd->bin_attr.size = MC_REGION_SIZE;
 	nd->bin_attr.read = tx2mon_read;
 	nd->bin_attr.private = nd;
